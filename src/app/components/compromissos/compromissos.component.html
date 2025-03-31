@@ -1,0 +1,67 @@
+<div class="simple-container">
+  <div class="simple-header">
+    <h2 class="simple-title">Gerenciar Compromissos</h2>
+    <div class="simple-divider"></div>
+  </div>
+
+  <div class="simple-form-card">
+    <form [formGroup]="compromissoForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input formControlName="titulo" placeholder="Título" class="simple-input">
+      </div>
+      
+      <div class="form-group">
+        <input formControlName="descricao" placeholder="Descrição" class="simple-input">
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <input type="date" formControlName="data" class="simple-input">
+        </div>
+        
+        <div class="form-group">
+          <input type="time" formControlName="hora" class="simple-input">
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <select formControlName="contatoId" class="simple-select">
+            <option value="" disabled selected>Selecione um contato</option>
+            <option *ngFor="let contato of contatos" [value]="contato.id">{{contato.nome}}</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <select formControlName="localId" class="simple-select">
+            <option value="" disabled selected>Selecione um local</option>
+            <option *ngFor="let local of locais" [value]="local.id">{{local.nome}}</option>
+          </select>
+        </div>
+      </div>
+      
+      <button type="submit" [disabled]="compromissoForm.invalid" class="simple-button">
+        {{editId ? 'Atualizar' : 'Adicionar'}}
+      </button>
+    </form>
+  </div>
+
+  <div class="simple-list-card">
+    <h3 class="list-title">Compromissos Agendados</h3>
+    
+    <ul class="simple-list">
+      <li *ngFor="let compromisso of compromissos" class="list-item">
+        <div class="item-main">
+          <span class="item-date">{{compromisso.data | date:'dd/MM'}}</span>
+          <span class="item-time">{{compromisso.hora}}</span>
+          <strong class="item-title">{{compromisso.titulo}}</strong>
+        </div>
+        <div class="item-actions">
+          <button class="action-button edit" (click)="edit(compromisso)">Editar</button>
+          <button class="action-button delete" (click)="delete(compromisso.id!)">Excluir</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+

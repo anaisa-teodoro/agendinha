@@ -1,0 +1,87 @@
+/* src/app/components/login/login.component.css */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #f4f4f4;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-style: normal;
+
+  /* Gradiente no texto */
+  background: linear-gradient(135deg, #dd6180 0%, #7c3aed 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+  padding: 20px;
+  background: linear-gradient(135deg, #dd6180 0%, #7c3aed 100%);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+  padding: 12px;
+  background: rgb(168, 58, 144);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button:disabled {
+  background: #dd6180;
+  cursor: not-allowed;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button:hover:not(:disabled) {
+  background:  #df4a6f;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1rem;
+    height: auto; /* Permita que o conteúdo ocupe mais espaço vertical */
+  }
+
+  form {
+    width: 100%; /* O formulário ocupa toda a largura */
+    padding: 1rem;
+  }
+
+  input, button {
+    font-size: 14px; /* Reduza o tamanho da fonte */
+    padding: 8px; /* Reduza o padding */
+  }
+}

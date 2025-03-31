@@ -1,0 +1,71 @@
+<div class="simple-container">
+  <div class="simple-header">
+    <h2 class="simple-title">Gerenciar Usuários</h2>
+    <div class="simple-divider"></div>
+  </div>
+
+  <div class="simple-form-card">
+    <form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input formControlName="nome" 
+               placeholder="Nome completo" 
+               class="simple-input">
+      </div>
+
+      <div class="form-group">
+        <input formControlName="email" 
+               type="email" 
+               placeholder="exemplo@dominio.com" 
+               class="simple-input">
+      </div>
+
+      <div class="form-group">
+        <input formControlName="senha" 
+               type="password" 
+               placeholder="Mínimo 6 caracteres" 
+               class="simple-input">
+      </div>
+
+      <div class="form-group">
+        <select formControlName="nivelAcesso" class="simple-select">
+          <option value="" disabled selected>Nível de acesso</option>
+          <option value="admin">Administrador</option>
+          <option value="usuario">Usuário Padrão</option>
+        </select>
+      </div>
+
+      <button type="submit" 
+              [disabled]="usuarioForm.invalid" 
+              class="simple-button">
+        {{editId ? 'Atualizar Usuário' : 'Adicionar Usuário'}}
+      </button>
+    </form>
+  </div>
+
+  <div class="simple-list-card">
+    <h3 class="list-title">Usuários Cadastrados</h3>
+    
+    <ul class="simple-list">
+      <li *ngFor="let usuario of usuarios" class="list-item">
+        <div class="user-info">
+          <div class="user-avatar" [class.admin]="usuario.nivelAcesso === 'admin'">
+            {{usuario.nome.charAt(0).toUpperCase()}}
+          </div>
+          <div>
+            <h4 class="user-name">{{usuario.nome}}</h4>
+            <div class="user-details">
+              <span class="user-email">{{usuario.email}}</span>
+              <span class="user-role" [class.admin]="usuario.nivelAcesso === 'admin'">
+                {{usuario.nivelAcesso === 'admin' ? 'Administrador' : 'Usuário'}}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="user-actions">
+          <button class="action-button edit" (click)="edit(usuario)">Editar</button>
+          <button class="action-button delete" (click)="delete(usuario.id!)">Excluir</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

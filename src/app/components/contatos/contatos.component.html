@@ -1,0 +1,50 @@
+<div class="simple-container">
+  <div class="simple-header">
+    <h2 class="simple-title">Gerenciar Contatos</h2>
+    <div class="simple-divider"></div>
+  </div>
+
+  <div class="simple-form-card">
+    <form [formGroup]="contatoForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input formControlName="nome" placeholder="Nome completo" class="simple-input">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <input formControlName="telefone" placeholder="Telefone" class="simple-input">
+        </div>
+        <div class="form-group">
+          <input formControlName="email" placeholder="E-mail" type="email" class="simple-input">
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="contatoForm.invalid" class="simple-button">
+        {{editId ? 'Atualizar' : 'Adicionar'}}
+      </button>
+    </form>
+  </div>
+
+  <div class="simple-list-card">
+    <h3 class="list-title">Lista de Contatos</h3>
+    
+    <ul class="simple-list">
+      <li *ngFor="let contato of contatos" class="list-item">
+        <div class="contact-info">
+          <div class="contact-avatar">{{contato.nome.charAt(0).toUpperCase()}}</div>
+          <div>
+            <h4 class="contact-name">{{contato.nome}}</h4>
+            <div class="contact-details">
+              <span class="contact-phone">{{contato.telefone}}</span>
+              <span class="contact-email">{{contato.email}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <button class="action-button edit" (click)="edit(contato)">Editar</button>
+          <button class="action-button delete" (click)="delete(contato.id!)">Excluir</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

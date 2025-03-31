@@ -1,0 +1,86 @@
+<div class="professional-menu-container">
+  <div class="professional-menu-card">
+    <div class="professional-header">
+      <div class="professional-logo">
+        <div class="logo-icon">📅</div>
+        <div class="logo-text">
+          <h1 class="professional-title">Agenda Pessoal</h1>
+         </div>
+      </div>
+    </div>
+
+    <div class="professional-menu-options">
+      <div class="menu-item" (click)="navigateTo('compromissos')">
+        <div class="item-icon-container calendar-bg">
+          <span class="item-icon">📅</span>
+        </div>
+        <div class="item-details">
+          <h3 class="item-title">Compromissos</h3>
+          <p class="item-description">Agende seus compromissos</p>
+        </div>
+        <div class="item-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="menu-item" (click)="navigateTo('contatos')">
+        <div class="item-icon-container contact-bg">
+          <span class="item-icon">👤</span>
+        </div>
+        <div class="item-details">
+          <h3 class="item-title">Contatos</h3>
+          <p class="item-description">Gerencie sua lista de contatos</p>
+        </div>
+        <div class="item-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="menu-item" (click)="navigateTo('locais')" *ngIf="isAdmin">
+        <div class="item-icon-container location-bg">
+          <span class="item-icon">📍</span>
+        </div>
+        <div class="item-details">
+          <h3 class="item-title">Locais</h3>
+          <p class="item-description">Gerencie os locais disponíveis</p>
+        </div>
+        <div class="item-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="menu-item" (click)="navigateTo('usuarios')" *ngIf="isAdmin">
+        <div class="item-icon-container users-bg">
+          <span class="item-icon">👥</span>
+        </div>
+        <div class="item-details">
+          <h3 class="item-title">Usuários</h3>
+          <p class="item-description">Gerencie os usuários do sistema</p>
+        </div>
+        <div class="item-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="menu-footer">
+        <div class="logout-item" (click)="logout()">
+          <div class="item-icon-container logout-bg">
+            <span class="item-icon">🚪</span>
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">Sair</h3>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

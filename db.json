@@ -1,0 +1,56 @@
+{
+  "compromissos": [
+    {
+      "id": "016d",
+      "titulo": "Estudar Angular",
+      "descricao": "Verificar tutoriais",
+      "data": "2025-03-31",
+      "hora": "20:00",
+      "contatoId": "d9fc",
+      "localId": "def3",
+      "usuarioId": "67e9f45bdef5f7794c27caf8"
+    },
+    {
+      "id": "7070",
+      "titulo": "Estudar Java",
+      "descricao": "Memorizar os comandos de atalho do VSCode",
+      "data": "2025-03-31",
+      "hora": "18:40",
+      "contatoId": "462f",
+      "localId": "def3",
+      "usuarioId": "67e9f45bdef5f7794c27caf8"
+    }
+  ],
+  "contatos": [
+    {
+      "id": "d9fc",
+      "nome": "Lady Gaga",
+      "telefone": "(47)999999545",
+      "email": "ladygaga@gmail.com"
+    },
+    {
+      "id": "5497",
+      "nome": "Sindel",
+      "telefone": "(47)999999546",
+      "email": "sindel@gmail.com"
+    },
+    {
+      "id": "462f",
+      "nome": "Kitana",
+      "telefone": "(47)999999547",
+      "email": "kitana@gmail.com"
+    }
+  ],
+  "locais": [
+    {
+      "id": "def3",
+      "nome": "Online",
+      "endereco": "Teams"
+    },
+    {
+      "id": "4662",
+      "nome": "Senac",
+      "endereco": "Avenida Brasil, 610 - Ponta Aguda"
+    }
+  ]
+}
