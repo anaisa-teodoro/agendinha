@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: agenda-frontend:1.0
+    image: agendinha:1.0
     container_name: agendinha
     ports:
       - "4200:80"
