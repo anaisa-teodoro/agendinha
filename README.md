@@ -136,7 +136,11 @@ npm install @angular/material @angular/cdk
    ```bash
    json-server --watch db.json
    ```
+## Caso queira, execute o Projeto via Docker 
 
+   ```bash
+ docker compose up -d --build
+  ```
 
 ## Exemplo de Requisição para Criar um Usuário
 
