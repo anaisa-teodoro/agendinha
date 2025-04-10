@@ -1,7 +1,9 @@
 services:
   frontend:
-    image: agendinha:1.0
-    container_name: agendinha
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: agenda-eletronica
     ports:
       - "4200:80"
     depends_on:
@@ -13,5 +15,5 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./db.json:/data/db.json
+      - ./db.json:/data/db.json # Ensure db.json exists in the same directory as this file
     command: -p 3000 /data/db.json
