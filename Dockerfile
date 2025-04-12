@@ -1,25 +1,13 @@
-# Build da aplicação
-FROM node:20-alpine as build
-
+FROM node:21 AS builder
 WORKDIR /app
-
-# Copiar os arquivos necessários para o build
-COPY package*.json ./
-RUN npm install
-
 COPY . .
+RUN npm install
+RUN npm run build
 
-# Gerar o build de produção
-RUN npm run build -- --configuration=production
+FROM nginx:alpine
+COPY --from=builder /app/dist/agenda-eletronica/browser /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY mime.types /etc/nginx/mime.types
 
-# Servir a aplicação com Nginx
-FROM nginx:stable-alpine
-
-# Copiar os arquivos do build para o Nginx
-COPY --from=build /app/dist/agenda-eletronica /usr/share/nginx/html
-
-# Expor a porta 80
 EXPOSE 80
-
-# Comando para iniciar o Nginx
 CMD ["nginx", "-g", "daemon off;"]
