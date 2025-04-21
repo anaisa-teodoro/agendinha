@@ -139,8 +139,9 @@ npm install @angular/material @angular/cdk
 ## Caso queira, execute o Projeto via Docker 
 
    ```bash
- docker compose up -d --build
+ docker-compose up -d 
   ```
+ 
 
 ## Exemplo de Requisição para Criar um Usuário
 
@@ -155,6 +156,13 @@ Para criar um usuário na API do professor, envie uma requisição `POST` para o
   "email": "sindel@gmail.com",
   "password": "1234",
   "role": "user"
+}
+
+{
+"name": "Raiden", 
+"email":"raiden@gmail.com", 
+"password":"1234", 
+"role": "admin"
 }
 ```
 ---

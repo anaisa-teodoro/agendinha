@@ -13,7 +13,6 @@ services:
     image: clue/json-server
     container_name: json-server
     ports:
-      - "3000:3000"
+      - "3000:80"
     volumes:
-      - ./db.json:/data/db.json # Ensure db.json exists in the same directory as this file
-    command: -p 3000 /data/db.json
+      - ./db.json:/data/db.json 
